@@ -6,3 +6,12 @@
   gather_facts: False
   roles:
   - provision_ec2
+
+- name: SSH into the instance and install required updates
+  hosts: server
+  connection: ssh
+  remote_user: centos
+  become: yes
+  gather_facts: False
+  roles:
+    - system_updates
