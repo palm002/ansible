@@ -8,7 +8,7 @@
     instance_type: "{{ aws_ec2_instance_type }}"
     image: "{{ aws_image }}"
     wait: yes
-    count: 1
+    count: 1 # TODO: make it dynamic
     vpc_subnet_id: "{{ aws_vpc_subnet }}"
     assign_public_ip: yes
   register: vm
@@ -17,10 +17,11 @@
     msg: "Detailed overview of the VM: {{ vm }}"
     verbosity: 4
 
-- name: Add new instance to host group
+- name: Add new instance to host group (in-memory)
   add_host:
     name: "{{ item.public_ip }}"
-    groupname: launched
+    hostname: "{{ item.public_ip }}"
+    groupname: server
   loop: "{{ vm.instances }}"
 
 - name: Wait for SSH to come up
