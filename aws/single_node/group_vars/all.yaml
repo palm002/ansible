@@ -1,0 +1,18 @@
+---
+
+## AWS defaults
+aws_region: ap-southeast-2
+
+# EC2
+aws_ec2_instance_type: t2.micro
+
+# IAM
+aws_image: ami-b6bb47d4
+
+# Tags
+owner: Mirko
+
+# VPC
+aws_vpc:              vpc-2120bf48
+aws_vpc_subnet:     subnet-2020bf49
+aws_vpc_sg:           sg-306c725c

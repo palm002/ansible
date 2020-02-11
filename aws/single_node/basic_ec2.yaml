@@ -1,0 +1,8 @@
+---
+
+- name: Spin up a clean EC2 instance
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  roles:
+  - provision_ec2
