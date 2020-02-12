@@ -1,0 +1,9 @@
+---
+
+- name: Install gcc-c++ 
+  become: yes
+  yum:
+    name: gcc-c++
+    state: present
+
+# TODO: add tests and template

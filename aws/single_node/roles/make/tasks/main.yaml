@@ -1,0 +1,9 @@
+---
+
+- name: Install make
+  become: yes
+  yum:
+    name: make
+    state: present
+
+#  add tests and template
