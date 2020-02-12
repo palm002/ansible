@@ -15,11 +15,11 @@ aws_vpc_subnet:     subnet-2020bf49
 aws_vpc_sg:           sg-306c725c
 
 ## Temp dir variable to store temporary files
-temp_folder: "/tempdir"
+temp_dir: "/tempdir"
 
 ## Goss defaults
 # Goss directories to be created on remote host
-goss_templates_dir: "{{ temp_folder }}/goss"
+goss_templates_dir: "{{ temp_dir }}/goss"
 goss_test_results_dir: "{{ goss_templates_dir }}/tests"
 
 # Goss variable to allow inclusion of goss-test role
