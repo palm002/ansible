@@ -15,3 +15,11 @@
   gather_facts: False
   roles:
     - system_updates
+
+- name: Install dependencies
+  hosts: server
+  connection: ssh
+  remote_user: centos
+  gather_facts: False
+  roles:
+    - goss

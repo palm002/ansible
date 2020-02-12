@@ -10,7 +10,7 @@
     instance_tags:
       Name: server
     wait: yes
-    count: 1 # TODO: make it dynamic
+    count: 1
     count_tag:
       Name='server'
     vpc_subnet_id: "{{ aws_vpc_subnet }}"

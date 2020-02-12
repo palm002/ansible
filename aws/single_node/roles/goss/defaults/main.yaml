@@ -1,0 +1,4 @@
+---
+
+goss_binary: '/usr/bin/goss'
+goss_download: 'https://github.com/aelsabbahy/goss/releases/download/v0.3.6/goss-linux-amd64'

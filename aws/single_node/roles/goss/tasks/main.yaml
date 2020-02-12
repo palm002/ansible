@@ -1,0 +1,23 @@
+---
+
+- name: Download Goss
+  become: yes
+  get_url:
+    url: "{{ goss_download }}"
+    dest: "{{ goss_binary }}"
+    mode: 0755
+    validate_certs: true # fails on alpine without this
+
+- name: Create required Goss directories
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+  with_items:
+    - "{{ goss_templates_dir }}"
+    - "{{ goss_test_results_dir }}"
+
+- include: "{{ goss_test_role }}"
+  vars:
+    test_name: test_goss
