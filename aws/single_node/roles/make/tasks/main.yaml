@@ -8,4 +8,4 @@
 
 - include: "{{ goss_test_role }}"
   vars:
-    test_name: test_node
+    test_name: test_make

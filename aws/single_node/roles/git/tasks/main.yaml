@@ -6,4 +6,6 @@
     name: git
     state: present
 
-# TODO: add tests and templates
+- include: "{{ goss_test_role }}"
+  vars:
+    test_name: test_git
