@@ -31,4 +31,6 @@
     path: "{{ node_temp_dir }}"
     state: absent
 
-#TODO: Add tests
+- include: "{{ goss_test_role }}"
+  vars:
+    test_name: test_node

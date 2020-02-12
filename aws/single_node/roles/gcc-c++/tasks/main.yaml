@@ -6,4 +6,6 @@
     name: gcc-c++
     state: present
 
-# TODO: add tests and template
+- include: "{{ goss_test_role }}"
+  vars:
+    test_name: test_gcc-c++
