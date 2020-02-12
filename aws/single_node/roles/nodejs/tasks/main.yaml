@@ -1,0 +1,34 @@
+---
+
+- name: Create temp directories
+  become: yes
+  file:
+    path: "{{ node_temp_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Download NodeJS
+  become: yes
+  get_url:
+    url: "{{ node_download }}"
+    dest: "{{ node_temp_dir }}"
+    mode: 0755
+    validate_certs: true # fails on alpine without this
+  
+- name: Execute install script
+  become: yes
+  shell: "{{ node_temp_dir }}/setup_{{ node_version }}.x"
+
+- name: "Install NodeJS{{ node_version }} and npm"
+  become: yes
+  yum:
+    name: nodejs
+    state: latest
+
+- name: Cleaning up temporary files
+  become: yes
+  file:
+    path: "{{ node_temp_dir }}"
+    state: absent
+
+#TODO: Add tests

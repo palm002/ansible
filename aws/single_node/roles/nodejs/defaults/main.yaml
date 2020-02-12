@@ -1,0 +1,5 @@
+---
+
+node_temp_dir: "{{ temp_dir }}/node"
+node_version: 12 # Only supports major versions i.e 8, 10, 12, 13
+node_download: "https://rpm.nodesource.com/setup_{{ node_version }}.x"
