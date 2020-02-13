@@ -6,4 +6,6 @@
     name: python3
     state: latest
 
-#TODO add tests and templates
+- include: "{{ goss_test_role }}"
+  vars:
+    test_name: test_python3

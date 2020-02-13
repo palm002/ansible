@@ -1,8 +1,11 @@
 ---
 
 - name: Install Java 1.8
+  become: yes
   yum:
     name: jre-1.8.0-openjdk
     state: present
 
-# add tests and templates
+- include: "{{ goss_test_role }}"
+  vars:
+    test_name: test_java8
