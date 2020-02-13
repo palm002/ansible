@@ -23,3 +23,10 @@
   gather_facts: False
   roles:
     - goss
+    - git
+    - gcc-c++
+    - make
+    - nodejs
+    - python3
+    - java8
+    - golang
