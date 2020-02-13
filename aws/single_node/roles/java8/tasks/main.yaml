@@ -1,0 +1,8 @@
+---
+
+- name: Install Java 1.8
+  yum:
+    name: jre-1.8.0-openjdk
+    state: present
+
+# add tests and templates

@@ -1,0 +1,9 @@
+---
+
+- name: Install Python 3
+  become: yes
+  yum:
+    name: python3
+    state: latest
+
+#TODO add tests and templates
