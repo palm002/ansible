@@ -1,0 +1,4 @@
+---
+go_temp_dir: "{{ temp_dir }}/golang"
+go_download: "https://dl.google.com/go/go1.13.8.linux-amd64.tar.gz"
+filename: go1.13.8.linux-amd64

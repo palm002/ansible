@@ -1,0 +1,43 @@
+---
+
+- name: Create required Golang directories
+  become: yes
+  file:
+    path: "{{ go_temp_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Download Golang
+  become: yes
+  get_url:
+    url: "{{ go_download }}"
+    dest: "{{ go_temp_dir }}"
+    mode: 0755
+    validate_certs: true # fails on alpine without this
+
+- name: Unarchive Golang package
+  become: yes
+  unarchive:
+    src: "{{ go_temp_dir }}/{{ filename }}.tar.gz"
+    dest: /usr/local
+    remote_src: yes
+
+- name: Add Golang symlinks
+  become: yes
+  file:
+    src: "/usr/local/go/bin/{{ item }}"
+    dest: "/usr/bin/{{ item }}"
+    state: link
+  with_items:
+    - go
+    - gofmt
+
+- name: Cleaning up directories
+  become: yes
+  file:
+    path: "{{ go_temp_dir }}"
+    state: absent
+
+- include: "{{ goss_test_role }}"
+  vars:
+    test_name: test_golang
