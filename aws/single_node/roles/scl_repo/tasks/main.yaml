@@ -1,9 +1,0 @@
----
-
-- name: Install Software Collections (SCL) TAKE 2
-  become: yes
-  yum:
-    name: centos-release-scl
-    state: present
-
-#  add tests
