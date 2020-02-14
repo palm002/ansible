@@ -1,0 +1,7 @@
+---
+
+- name: Clean up temporary files and tests
+  become: yes
+  file:
+    path: "{{ temp_dir }}"
+    state: absent
