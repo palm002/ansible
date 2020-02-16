@@ -5,7 +5,7 @@
   connection: local
   gather_facts: False
   roles:
-  - provision_ec2
+    - provision_ec2
 
 - name: SSH into the instance and install required updates
   hosts: server

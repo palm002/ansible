@@ -2,17 +2,19 @@
 
 - name: Launch instance
   ec2:
-    key_name: mirko_rsa
+    key_name: "{{ aws_keypair }}"
     region: "{{ aws_region }}"
     group_id: "{{ aws_vpc_sg }}"
     instance_type: "{{ aws_ec2_instance_type }}"
     image: "{{ aws_image }}"
     instance_tags:
-      Name: server
+      Name: "{{ instance_name }}"
+      Owner: "{{ owner }}"
     wait: yes
     count: 1
     count_tag:
-      Name='server'
+      Name="{{ instance_name }}"
+      Owner="{{ owner }}"
     vpc_subnet_id: "{{ aws_vpc_subnet }}"
     assign_public_ip: yes
   register: vm

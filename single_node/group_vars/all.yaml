@@ -14,6 +14,13 @@ aws_vpc:              vpc-2120bf48
 aws_vpc_subnet:     subnet-2020bf49
 aws_vpc_sg:           sg-306c725c
 
+# Tags
+instance_name: server
+owner: mirko
+
+# Keypair
+aws_keypair: 'mirko_rsa'
+
 ## Temp dir variable to store temporary files
 temp_dir: "/tempdir"
 
