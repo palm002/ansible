@@ -41,7 +41,7 @@ the following tools and runs tests with <a href='https://github.com/aelsabbahy/g
 - java8
 - golang
 
-<b><em>NOTE:<em></b> As goss runs tests on all of the roles, it is a dependency on this playbook and 
+<b><em>NOTE:</em></b> As goss runs tests on all of the roles, it is a dependency on this playbook and 
 deleting/ignoring the `goss` role will result in a failure of the playbook.
 
 
